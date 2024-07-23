@@ -62,6 +62,48 @@ export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
     query AllPosts {
+      posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
+        edges {
+          node {
+            title
+            excerpt
+            slug
+            date
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            author {
+              node {
+                name
+                firstName
+                lastName
+                avatar {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    },
+  );
+
+  return data?.posts;
+}
+
+export async function getAllPostsForNews(preview) {
+  const data = await fetchAPI(
+    `
+    query AllPosts {
       posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
@@ -175,7 +217,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
             : ""
         }
       }
-      posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+      posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             ...PostFields
@@ -205,7 +247,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   // Filter out the main post
   data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug);
   // If there are still 3 posts, remove the last one
-  if (data.posts.edges.length > 2) data.posts.edges.pop();
+  if (data.posts.edges.length > 3) data.posts.edges.pop();
 
   return data;
 }

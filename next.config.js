@@ -11,13 +11,22 @@ const { protocol, hostname, port, pathname } = new URL(
 
 /** @type {import('next').NextConfig} */
 module.exports = {
+  experimental: {
+    optimizeCss: true,
+  },
   images: {
     remotePatterns: [
       {
-        protocol: protocol.slice(0, -1),
-        hostname,
-        port,
-        pathname: `${pathname}/**`,
+        protocol: 'https',
+        hostname: 'staging11.latticeflow.ai',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https', // Use 'https' directly as a string
+        hostname: 'secure.gravatar.com',
+        port: '', // Leaving port empty if not specifically required
+        pathname: '/avatar/**', // Match the correct path pattern for Gravatar
       },
     ],
   },

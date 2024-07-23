@@ -10,7 +10,8 @@ module.exports = {
         "accent-1": "#FAFAFA",
         "accent-2": "#EAEAEA",
         "accent-7": "#333",
-        success: "#0070f3",
+        "lf-blue": "#418FDE",
+        success: "#418FDE",
         cyan: "#79FFE1",
       },
       spacing: {
@@ -28,11 +29,28 @@ module.exports = {
         "7xl": "4.5rem",
         "8xl": "6.25rem",
       },
+      animation: {
+        ["infinite-slider"]: "infiniteSlider 20s linear infinite",
+      },
+      keyframes: {
+        infiniteSlider: {
+          "0%": { transform: "translateX(0)" },
+          "100%": {
+            transform: "translateX(calc(-500px * 5))",
+          },
+        },
+      },
       boxShadow: {
         small: "0 5px 10px rgba(0, 0, 0, 0.12)",
         medium: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: [],
+    darkTheme: ['class', '[data-theme="night"]'],
+    styled: true,
+    base: false,
+  },
 };

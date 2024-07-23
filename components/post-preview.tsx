@@ -12,27 +12,25 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div>
-      <div className="mb-5">
+    <div className="card card-compact shadow-xl hover:shadow-2xl duration-300	border">
+
+      <figure>
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} />
+          <CoverImage title={title} coverImage={coverImage} slug={slug} customCLass="height300"/>
         )}
+      </figure>
+      <div className="card-body">
+        <h3 className="text-xl min-h-28 mb-3 leading-snug text-neutral-700">
+          <Link
+            href={`/news/${slug}`}
+            className="text-gray-600 hover:text-blue-400 duration-300"
+            dangerouslySetInnerHTML={{ __html: title }}
+          ></Link>
+        </h3>
+        <div className="text-lg mb-4">
+          <Date dateString={date} />
+        </div>
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link
-          href={`/posts/${slug}`}
-          className="hover:underline"
-          dangerouslySetInnerHTML={{ __html: title }}
-        ></Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <Date dateString={date} />
-      </div>
-      <div
-        className="text-lg leading-relaxed mb-4"
-        dangerouslySetInnerHTML={{ __html: excerpt }}
-      />
-      <Avatar author={author} />
     </div>
   );
 }

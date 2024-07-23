@@ -6,7 +6,7 @@
 .content ul,
 .content ol,
 .content blockquote {
-  @apply my-6;
+  @apply mb-6;
 }
 
 .content a {

@@ -7,6 +7,7 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import { getAllPostsForHome } from "../lib/api";
 import { CMS_NAME } from "../lib/constants";
+import CustomerLogos from "../components/customer-logos";
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node;
@@ -15,11 +16,14 @@ export default function Index({ allPosts: { edges }, preview }) {
   return (
     <Layout preview={preview}>
       <Head>
-        <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+        <title>Next.js and Latticeflow AI</title>
       </Head>
       <Container>
         <Intro />
-        {heroPost && (
+      </Container>
+      <CustomerLogos />
+      <Container>
+        {/* {heroPost && (
           <HeroPost
             title={heroPost.title}
             coverImage={heroPost.featuredImage}
@@ -28,8 +32,14 @@ export default function Index({ allPosts: { edges }, preview }) {
             slug={heroPost.slug}
             excerpt={heroPost.excerpt}
           />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        )} */}
+        {morePosts.length > 0 &&
+          (
+            <>
+              <MoreStories posts={morePosts} className={'my-16 px-0 columns-2 m-auto justify-center 2xl:grid-cols-3'}/>
+            </>
+          )}
+
       </Container>
     </Layout>
   );

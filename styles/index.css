@@ -14,6 +14,27 @@
 
 /* Your own custom utilities */
 
+@font-face {
+  font-family: 'GilroySemiBold';
+  src: url('/fonts/Gilroy-SemiBold.woff');
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.woff');
+}
+
+.gilroy-semibold {
+  font-family: 'GilroySemiBold';
+}
+
+h1, h2, h3, button {
+  font-family: 'GilroySemiBold';
+}
+
+p {
+  font-family: 'Gilroy';
+}
+
 .has-text-align-left {
   @apply text-left;
 }
@@ -43,23 +64,27 @@
 .wp-block-image img {
   @apply max-w-full mt-2;
 }
+
 .wp-block-image.aligncenter {
   @apply text-center;
 }
+
 .wp-block-image.alignfull img,
 .wp-block-image.alignwide img {
   @apply w-full;
 }
+
 .wp-block-image .alignleft,
 .wp-block-image .alignright,
 .wp-block-image .aligncenter,
 .wp-block-image.is-resized {
   @apply table ml-0 mr-0;
 }
-.wp-block-image .alignleft > figcaption,
-.wp-block-image .alignright > figcaption,
-.wp-block-image .aligncenter > figcaption,
-.wp-block-image.is-resized > figcaption {
+
+.wp-block-image .alignleft>figcaption,
+.wp-block-image .alignright>figcaption,
+.wp-block-image .aligncenter>figcaption,
+.wp-block-image.is-resized>figcaption {
   @apply table-caption;
 
   caption-side: bottom;
@@ -68,9 +93,11 @@
 .wp-block-image .alignleft {
   @apply float-left mr-4;
 }
+
 .wp-block-image .alignright {
   @apply float-right ml-4;
 }
+
 .wp-block-image .aligncenter {
   @apply m-auto;
 }
@@ -101,4 +128,14 @@
 
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
+}
+
+.height300 {
+  min-height: 13.75rem;
+  max-height: 13.75rem;
+  object-fit: cover;
+}
+
+.container.container-post {
+  max-width: 61.25rem;
 }
