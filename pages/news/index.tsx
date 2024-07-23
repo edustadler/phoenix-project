@@ -11,7 +11,7 @@ import CustomerLogos from "../../components/customer-logos";
 
 export default function Index({ allPosts: { edges }, preview }) {
     const heroPost = edges[3]?.node;
-    const morePosts = edges.slice(0);
+    const morePosts = edges.slice();
   
     return (
       <Layout preview={preview}>
