@@ -12,7 +12,7 @@ export default function Footer() {
           width={80}
           height={80}
           alt={"lf-logo"}
-          objectFit="none"
+          objectFit={"none"}
           />
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
@@ -23,7 +23,7 @@ export default function Footer() {
             </a>
             <a
               href={`https://latticeflow.ai/book-a-demo`}
-              className="mx-3 font-bold hover:text-[#3e8ede] rounded-full"
+              className="mx-3 font-bold hover:text-[#3e8ede] rounded-full duration-200"
             >
               Book a demo
             </a>

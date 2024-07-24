@@ -18,7 +18,7 @@ export default function Index({ allPosts: { edges }, preview }) {
       </Head>
       <Intro />
       <section className="bg-gray-100 py-36">
-        <Container>
+        <Container className="px-4 md:px-auto">
           {morePosts.length > 0 &&
             (
               <>

@@ -8,7 +8,7 @@ export default function Intro() {
     <>
       <section className="flex-col md:flex-col flex items-center md:justify-between pt-32 pb-32 md:pb-12 bg-[url('/images/oc07.png')] bg-center bg-cover bg-no-repeat">
 
-        <div className=" container grid grid-cols-2 gap-10 flex items-center transform m-auto w-full min-h-[60vh]">
+        <div className=" container grid md:grid-cols-2 px-4 md:px-auto gap-10 flex items-center transform m-auto w-full min-h-[60vh]">
           <div className="container">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight md:pr-8 text-accent-7">
               LatticeFlow

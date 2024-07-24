@@ -54,7 +54,7 @@ export default function Post({ post, posts, preview }) {
           </>
         )}
       </Container>
-      <Container>
+      <Container className="pb-32">
         <SectionSeparator />
 
         {morePosts?.length > 0 && (
