@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { CMS_NAME, CMS_URL } from "../lib/constants";
 import Link from "next/link";
+import CustomerLogos from "./customer-logos";
 
 export default function Intro() {
   return (
     <>
-      <section className="flex-col md:flex-row flex items-center md:justify-between mt-32 mb-32 md:mb-12">
+      <section className="flex-col md:flex-col flex items-center md:justify-between pt-32 pb-32 md:pb-12 bg-[url('/images/oc07.png')] bg-center bg-cover bg-no-repeat">
 
-        <div className="grid grid-cols-2 gap-10 flex items-center	m-auto w-full min-h-[60vh]">
+        <div className=" container grid grid-cols-2 gap-10 flex items-center transform m-auto w-full min-h-[60vh]">
           <div className="container">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight md:pr-8 text-accent-7">
               LatticeFlow
@@ -21,7 +22,7 @@ export default function Intro() {
             </Link>
 
           </div>
-          <div className="mockup-browser bg-base-300 border shadow-lg">
+          <div className="mockup-browser bg-base-300 bg-gray-100 border shadow-2xl">
             <div className="mockup-browser-toolbar">
               <div className="input border-gray-300">latticeflow.ai</div>
             </div>
@@ -34,6 +35,7 @@ export default function Intro() {
           </div>
 
         </div>
+        <CustomerLogos className="bg-transparent" />
       </section>
 
     </>

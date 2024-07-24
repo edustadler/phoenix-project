@@ -16,19 +16,18 @@ export default function Index({ allPosts: { edges }, preview }) {
       <Head>
         <title>Next.js and Latticeflow AI</title>
       </Head>
-      <Container>
-        <Intro />
-      </Container>
-      <CustomerLogos />
-      <Container>
-        {morePosts.length > 0 &&
-          (
-            <>
-              <MoreStories posts={morePosts} className={'my-16 px-0 columns-2 m-auto justify-center 2xl:grid-cols-3'}/>
-            </>
-          )}
+      <Intro />
+      <section className="bg-gray-100 py-36">
+        <Container>
+          {morePosts.length > 0 &&
+            (
+              <>
+                <MoreStories posts={morePosts} className={'px-0 m-auto justify-center 2xl:grid-cols-3'} />
+              </>
+            )}
 
-      </Container>
+        </Container>
+      </section>
     </Layout>
   );
 }

@@ -9,7 +9,7 @@ export default function MoreStories({ posts, className }: StoriesProps) {
   return (
     <section>
 
-      <div className={`grid grid-cols-1 md:grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 2xl:grid-cols-4 md:gap-x-8 lg:gap-x-6 gap-y-10 md:gap-y-8 mb-32 ${className}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 2xl:grid-cols-4 md:gap-x-8 lg:gap-x-6 gap-y-10 md:gap-y-8 2xl:col-start-2 ${className}`}>
         {posts.map(({ node }) => (
           <PostPreview
             key={node.slug}

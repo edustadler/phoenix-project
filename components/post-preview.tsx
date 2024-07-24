@@ -12,7 +12,7 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div className="card card-compact shadow-xl hover:shadow-2xl duration-300	border">
+    <div className="card card-compact shadow-xl hover:shadow-2xl duration-300	border border-gray bg-white">
 
       <figure>
         {coverImage && (

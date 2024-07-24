@@ -15,7 +15,7 @@ export default function HeroPost({
     <section className="flex gap-4">
       <div className="w-full">
         {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} width={908} height={500} customCLass={'rounded-2xl shadow-1'} />
+          <CoverImage title={title} coverImage={coverImage} slug={slug} width={800} height={500} customCLass={'rounded-2xl shadow-1'} />
         )}
       </div>
       <div className="flex flex-col justify-evenly md:gap-x-16 lg:gap-x-8 w-3/4">

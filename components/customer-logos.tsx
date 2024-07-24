@@ -11,9 +11,16 @@ const imageNames = [
     'clickin.svg'
 ];
 
-const CustomerLogos = () => {
+interface CustomerLogosProps {
+    className?: string;
+}
+
+const CustomerLogos: React.FC<CustomerLogosProps> = ({ className }) => {
+    const defaultClassName = "bg-gray-100";
+    const finalClassName = className ? className : defaultClassName;
+
     return (
-        <div className="bg-gray-100">
+        <div className={`${finalClassName} pt-16`}>
             <div className='container mx-auto'>
                 <div className="flex justify-center">
                     <div className="grid grid-cols-3 md:grid-cols-8 gap-6 md:gap-20 px-8">
@@ -33,3 +40,4 @@ const CustomerLogos = () => {
 };
 
 export default CustomerLogos;
+
