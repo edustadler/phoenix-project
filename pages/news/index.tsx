@@ -11,7 +11,7 @@ import CustomerLogos from "../../components/customer-logos";
 import Link from "next/link";
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const heroPost = edges[3]?.node;
+  const heroPost = edges[4]?.node;
   const morePosts = edges.slice();
 
   return (
@@ -20,20 +20,18 @@ export default function Index({ allPosts: { edges }, preview }) {
         <title>Next.js and Latticeflow AI - News</title>
       </Head>
       <div className="bg-[url('/images/oc07.png')] bg-center bg-cover bg-no-repeat">
-        <Container className="py-14">
-          <Link href={`/news`}>
-            <h1 className="text-5xl text-[#333] mb-8">News</h1>
-            {heroPost && (
-              <HeroPost
-                title={heroPost.title}
-                coverImage={heroPost.featuredImage}
-                date={heroPost.date}
-                author={heroPost.author}
-                slug={heroPost.slug}
-                excerpt={heroPost.excerpt}
-              />
-            )}
-          </Link>
+        <Container className="py-2 md:py-14">
+          <h1 className="text-5xl text-[#333] mb-8">News</h1>
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.featuredImage}
+              date={heroPost.date}
+              author={heroPost.author}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+            />
+          )}
         </Container>
         <CustomerLogos className="bg-transparent" />
       </div>
@@ -41,9 +39,9 @@ export default function Index({ allPosts: { edges }, preview }) {
         {morePosts.length > 0 &&
           (
             <>
-              <Container className="my-16 px-0 columns-1">
+              <div className="my-16 px-0 columns-1">
                 <MoreStories posts={morePosts} />
-              </Container>
+              </div>
             </>
           )}
 

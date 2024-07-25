@@ -14,11 +14,11 @@ export default function PostPreview({
   return (
     <>
       <div>
-        <Link href={`/news/${slug}`} className="">
+        <a href={`/news/${slug}`}>
           <div className="card card-compact shadow-xl hover:shadow-2xl hover:shadow-gray-400 duration-300	border border-gray bg-white">
             <figure>
               {coverImage && (
-                <CoverImage title={title} coverImage={coverImage} slug={slug} customCLass="height300" />
+                <CoverImage title={title} coverImage={coverImage} slug={slug} customCLass="max-h-[180px] min-h-[180px] md:max-h-[220px] md:min-h-[220px] object-cover" />
               )}
             </figure>
             <div className="card-body">
@@ -35,7 +35,7 @@ export default function PostPreview({
             </div>
           </div>
 
-        </Link>
+        </a>
       </div>
     </>
   );

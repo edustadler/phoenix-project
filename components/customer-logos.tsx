@@ -29,7 +29,7 @@ const CustomerLogos: React.FC<CustomerLogosProps> = ({ className }) => {
                                 key={index}
                                 src={`/images/${name}`}
                                 alt={`Logo ${index + 1}`}
-                                className="w-36 h-40"
+                                className="w-36 h-20 md:h-40"
                             />
                         ))}
                     </div>
